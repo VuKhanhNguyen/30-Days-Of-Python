@@ -137,6 +137,87 @@ exec(compiled_code)
 complexTest1, complexTest2 = 3, -4
 result = complex(complexTest1, complexTest2)
 print(result) 
+print("phần thực: ", result.real)
+print("phần ảo: ", result.imag)
+#================================================================================================
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# Tạo một đối tượng Person
+person = Person("Alice", 30)
+
+# Trước khi xóa thuộc tính
+print("Tên:", person.name)
+print("Tuổi:", person.age)
+
+# Xóa thuộc tính 'age' của đối tượng person
+delattr(person, "age")
+
+# Kiểm tra lại sau khi xóa
+print("Tên:", person.name)
+try:
+    print("Tuổi:", person.age)  # Sẽ gây lỗi vì 'age' đã bị xóa
+except AttributeError as e:
+    print("Lỗi:", e)
+
+#================================================================================================
+my_dict = dict(name="Alice", age=25, city="New York")
+print(my_dict)
+
+# Tạo từ điển từ danh sách các cặp (key, value)
+pairs = [("name", "Bob"), ("age", 30), ("city", "London")]
+my_dict = dict(pairs)
+print(my_dict)
+
+original_dict = {"a": 1, "b": 2}
+copied_dict = dict(original_dict)
+print(copied_dict)
+
+# Từ điển gốc
+original_dict = {"x": 10, "y": 20}
+# Kết hợp từ điển gốc với các đối số từ khóa
+new_dict = dict(original_dict, z=30, y=50)  # `y` được ghi đè
+print(new_dict)
+#================================================================================================
+import math
+print(dir(math))
+print(dir())
+print(dir(Example()))
+methods = [m for m in dir(math) if not m.startswith("_")]
+print(methods)
+
+#================================================================================================
+print(divmod(10, 3)) # bằng 3 dư 1 (3,1)
+
+#================================================================================================
+for i, nameSkill in enumerate(skills,start=1):
+    print(f"Thứ tự {i}: {nameSkill}")
+    
+for n in enumerate(skills):
+    print(n)
+    
+for index, char in enumerate("Python"):
+    print(f"Ký tự {char} ở vị trí {index}")
+        
+#================================================================================================
+x=1
+print(eval('x+1'))
+
+expr = "3 + 5 * 2"
+result = eval(expr)
+print(result)
+
+x = 100
+context = {"x": 10, "y": 20}  # Chỉ cho phép dùng x = 10, y = 20
+print(eval("x + y", context))
+
+# user_input = input("Nhập biểu thức toán học: ")  # Ví dụ nhập: 10 / 2 + 3
+# print("Kết quả:", eval(user_input))
+
+#================================================================================================
+
 
 #================================================================================================
 #================================================================================================
@@ -226,10 +307,22 @@ print(result)
 #================================================================================================
 #================================================================================================
 #================================================================================================
-#================================================================================================
-#================================================================================================
-#================================================================================================
-#================================================================================================
-#================================================================================================
-#================================================================================================
-#================================================================================================
+
+#exercises
+#1.Check the data type of all your variables using type() built-in function
+print(type(first_name))
+print(type(skills))
+print(type(age))
+
+#2.Using the len() built-in function, find the length of your first name
+print(len(first_name))
+
+#3.Compare the length of your first name and your last name
+print(len(first_name) > len(last_name))
+
+#4.Declare 5 as num_one and 4 as num_two
+num_one = 5
+num_two = 4
+
+#5.Add num_one and num_two and assign the value to a variable total
+total = num_one + num_two
