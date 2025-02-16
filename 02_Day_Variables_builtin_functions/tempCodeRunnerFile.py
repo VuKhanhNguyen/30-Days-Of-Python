@@ -1,1 +1,1 @@
- # data[0] = 0xFF
+print(Example.class_method())
