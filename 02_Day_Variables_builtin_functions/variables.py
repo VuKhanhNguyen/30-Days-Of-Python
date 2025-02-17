@@ -164,6 +164,7 @@ except AttributeError as e:
 
 #================================================================================================
 my_dict = dict(name="Alice", age=25, city="New York")
+print(my_dict.get("name"))
 print(my_dict)
 
 # Tạo từ điển từ danh sách các cặp (key, value)
@@ -209,14 +210,41 @@ expr = "3 + 5 * 2"
 result = eval(expr)
 print(result)
 
-x = 100
+x1 = 100
+y1 = 20
 context = {"x": 10, "y": 20}  # Chỉ cho phép dùng x = 10, y = 20
 print(eval("x + y", context))
+print(eval("x1 + y1", globals()))
 
 # user_input = input("Nhập biểu thức toán học: ")  # Ví dụ nhập: 10 / 2 + 3
 # print("Kết quả:", eval(user_input))
 
 #================================================================================================
+class Book:
+    def __init__ (self, title, author,yearPublish):
+        self.title=title
+        self.author=author
+        self.yearPublish=yearPublish
+book= Book("Doraemon","Fujiko.F.Fujio","2004")
+print(getattr(book, 'title','không tìm thấy'))
+
+
+class MathOperations:
+    def add(self, a, b):
+        return a + b
+    
+    def multiply(self, a, b):
+        return a * b
+
+math_obj = MathOperations()
+
+# Chọn phương thức cần gọi
+operation = "add"
+func = getattr(math_obj, operation, None)  # Lấy phương thức add
+if func:
+    print(func(3, 5))  # Output: 8        
+
+#================================================================================================
 
 
 #================================================================================================
@@ -306,8 +334,9 @@ print(eval("x + y", context))
 #================================================================================================
 #================================================================================================
 #================================================================================================
-#================================================================================================
 
+
+import math
 #exercises
 #1.Check the data type of all your variables using type() built-in function
 print(type(first_name))
@@ -321,8 +350,80 @@ print(len(first_name))
 print(len(first_name) > len(last_name))
 
 #4.Declare 5 as num_one and 4 as num_two
-num_one = 5
-num_two = 4
+num_one = 20
+num_two = 8
 
 #5.Add num_one and num_two and assign the value to a variable total
 total = num_one + num_two
+print(total)
+
+#6.Subtract num_one from num_two and assign the value to a variable total
+total1 = num_one - num_two
+print(total1)
+
+#7.Multiply num_two and num_one and assign the value to a variable total
+total2 = num_one * num_two
+print(total2)
+
+#8.Divide num_one by num_two and assign the value to a variable total
+try :
+    total3 = num_one / num_two
+    print(total3)
+except ZeroDivisionError:
+    print("Không thể chia cho 0")
+    
+#9.Use modulus division to find num_two divided by num_one and assign the value to a variable remainder
+remainder = num_two % num_one
+print(remainder)
+
+remainder1,remainder2 = divmod(num_two, num_one)
+print(remainder2)
+
+#10.Calculate num_one to the power of num_two and assign the value to a variable exp
+exp = num_one * math.pow(num_two,2)
+print(exp)
+
+#11.Find floor division of num_one by num_two and assign the value to a variable floor_division
+floor_division = num_one // num_two
+print(floor_division)
+
+'''12.The radius of a circle is 30 meters.
+-Calculate the area of a circle and assign the value to a variable name of area_of_circle
+-Calculate the circumference of a circle and assign the value to a variable name of circum_of_circle
+-Take radius as user input and calculate the area.'''
+import math
+area_of_circle = math.pi * math.pow(30,2)
+print(f'Diện tích hình tròn là',area_of_circle)
+
+circum_of_circle = 2 * math.pi * 30
+print(f'Chu vi hình tròn là',circum_of_circle)
+
+import math
+userInput = input("Nhập vào bán kính hình tròn: ")
+while not userInput.isnumeric():
+    print("Nhập sai")
+    userInput = input("Nhập vào bán kính hình tròn: ")
+    
+area_of_circle2 = math.pi * math.pow(int(userInput),2)
+print(f'Diện tích hình tròn là',area_of_circle2)    
+
+#13.Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
+class information:
+    def __init__(self, firstname, lastname, country, age):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.country = country
+        self.age = age
+    def __str__(self):
+        # return f"{self.firstname} {self.lastname} {self.country} {self.age}"
+        return f"Tên: {self.firstname}, Họ: {self.lastname}, Quốc gia: {self.country}, Tuổi: {self.age}"
+
+info_input = input("Nhập tên: ")
+info_input2 = input("Nhập họ: ")
+info_input3 = input("Nhập quốc gia: ")
+info_input4 = input("Nhập tuổi:")
+info = information(info_input, info_input2, info_input3, info_input4)
+print(info)
+
+#14.Run help('keywords') in Python shell or in your file to check for the Python reserved words or keywords
+print(help('keywords'))
