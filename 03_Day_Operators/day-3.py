@@ -122,3 +122,74 @@ print(not True)      # False - Negation, the not operator turns true to false
 print(not False)     # True
 print(not not True)  # True
 print(not not False) # False
+
+# x=10 và x>>=2 tức là x = 10 với binary 1010, sau đó dịch phải 2 bit, kết quả là 0010, tức là 2
+x=10
+x>>=2
+print(x)
+
+# x=100 và x<<=2 tức là x = 100 với binary 1100100, sau đó dịch trái 2 bit, kết quả là 1100100"00", tức là 400
+x=100
+x<<=2
+print(x)
+
+print(x:=3) #=3 nhưng print(x=3) sẽ bị lỗi
+#================================================================================================
+# Exercises
+#1.Declare your age as a integer variable
+age = int(21)
+print(f'Tuổi của ní là: ', age)
+
+#2.Declare your height as a float variable
+height = float(1.75)
+print(f'Chiều cao của ní là: ', height, 'm')
+
+#3.Declare a variable that store a complex number
+cnumberReal = 4
+cnumberImg = 2
+complexNumber = complex(cnumberReal, cnumberImg)
+print(complexNumber)
+print(f"Phần thực là: ", complexNumber.real)
+print(f"Phần ảo là: ", complexNumber.imag)
+
+#4.Write a script that prompts the user to enter base and height of the triangle and calculate an area of this triangle (area = 0.5 x b x h).
+import math
+print("Nhập vào chiều dài cạnh đáy và chiều cao của tam giác: ")
+while True:
+    try:
+        base = float(input("Chiều dài cạnh đáy: "))
+        if base <= 0:
+            print("Nhập sai, mời nhập lại")
+            continue
+        height = float(input("Chiều cao: "))
+        if height <= 0:
+            print("Nhập sai, mời nhập lại")
+            continue
+        break
+    except ValueError:
+        print("Nhập sai, mời nhập lại")
+area = 0.5 * base * height
+print(f'Diện tích của tam giác là: ', area)
+
+#6.Write a script that prompts the user to enter side a, side b, and side c of the triangle. Calculate the perimeter of the triangle (perimeter = a + b + c).
+import math
+print("Nhập vào 3 cạnh của tam giác: ")
+while True:
+    try:
+        a = float(input(f"Nhập cạnh a: "))
+        if a<=0 or not a.replace('.', '', 1).isdigit():
+            print("Nhập sai mời nhập lại!")
+            continue
+        b = float(input(f"Nhập cạnh b: "))
+        if b<=0 or not b.replace('.', '', 1).isdigit():
+            print("Nhập sai mời nhập lại!")
+            continue
+        c = float(input(f"Nhập cạnh c: "))
+        if c<=0 or not c.replace('.', '', 1).isdigit():
+            print("Nhập sai mời nhập lại!")
+            continue
+        break
+    except ValueError:
+        print("Nhập sai mời nhập lại!")
+perimeter = a + b + c
+print(f'Chu vi của tam giác là: ', perimeter)        
