@@ -1,21 +1,20 @@
-import math
-print("Nhập vào 3 cạnh của tam giác: ")
-while True:
-    try:
-        a = float(input(f"Nhập cạnh a: "))
-        if a<=0 or not a.replace('.', '', 1).isdigit():
-            print("Nhập sai mời nhập lại!")
-            continue
-        b = float(input(f"Nhập cạnh b: "))
-        if b<=0 or not b.replace('.', '', 1).isdigit():
-            print("Nhập sai mời nhập lại!")
-            continue
-        c = float(input(f"Nhập cạnh c: "))
-        if c<=0 or not c.replace('.', '', 1).isdigit():
-            print("Nhập sai mời nhập lại!")
-            continue
-        break
-    except ValueError:
-        print("Nhập sai mời nhập lại!")
-perimeter = a + b + c
-print(f'Chu vi của tam giác là: ', perimeter)       
+def findSlope(e):
+    p = e.replace("y=","").split("x")
+    s = float(p[0])    
+    # i = float(p[1])
+    return s
+
+def findIntercept(e):    
+    p = e.replace("y=","").split("x")
+    # s = float(p[0])    
+    i = float(p[1])
+    return i
+      
+e = "y=2x-2"
+
+xi = - findIntercept(e) / findSlope(e)
+print(f"X-intercept là: ({xi},0)")
+yi = findIntercept(e)
+print(f"Y-intercept là: (0,{yi})")
+slope=findSlope(e)
+print(f"Hệ số góc (slope) là: {slope}")

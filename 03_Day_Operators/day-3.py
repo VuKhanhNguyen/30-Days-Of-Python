@@ -176,16 +176,16 @@ import math
 print("Nhập vào 3 cạnh của tam giác: ")
 while True:
     try:
-        a = float(input(f"Nhập cạnh a: "))
-        if a<=0 or not a.replace('.', '', 1).isdigit():
+        a = input(f"Nhập cạnh a: ")
+        if not a.replace('.', '', 1).isdigit():
             print("Nhập sai mời nhập lại!")
             continue
-        b = float(input(f"Nhập cạnh b: "))
-        if b<=0 or not b.replace('.', '', 1).isdigit():
+        b = input(f"Nhập cạnh b: ")
+        if not b.replace('.', '', 1).isdigit():
             print("Nhập sai mời nhập lại!")
             continue
-        c = float(input(f"Nhập cạnh c: "))
-        if c<=0 or not c.replace('.', '', 1).isdigit():
+        c = input(f"Nhập cạnh c: ")
+        if not c.replace('.', '', 1).isdigit():
             print("Nhập sai mời nhập lại!")
             continue
         break
@@ -193,3 +193,113 @@ while True:
         print("Nhập sai mời nhập lại!")
 perimeter = a + b + c
 print(f'Chu vi của tam giác là: ', perimeter)        
+
+#6. Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
+#print ("Nhập vào chiều dài và chiều rộng của hình chữ nhật: ")
+while True:
+    try:
+        chieudai = float(input("Chiều dài: "))
+        chieurong = float(input("Chiều rộng: "))
+        if(chieudai <= 0 or chieurong <= 0):
+            print("Chiều dài và chiều rộng phải > 0 nha ní !")
+            chieudai = float(input("Chiều dài: "))
+            chieurong = float(input("Chiều rộng: "))
+        else:
+            dientich = chieudai * chieurong
+            chuvi = 2 * (chieudai + chieurong)
+        print(f"Diện tích là:  {dientich}  và chu vi là:  {chuvi}")
+        break
+    except Exception as e:
+        print("Lỗi mọe nó rồi thần đằng ạ!!")
+    
+
+#7. Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
+# breakpoint()
+import math
+while True:
+    try:
+        r = float(input("Nhập bán kính: "))
+        area = math.pi * math.pow(r,2)
+        c = 2 * math.pi * r
+        print(f"Diện tích hình tròn là: {area} và chu vi hình tròn là: {c}")
+        break
+            
+    except ValueError as e:
+        print(f"Nhập sai mời nhập lại! {e}")
+    except Exception as e:
+        print(f"Lỗi {e} mọe nó rồi thần đằng ạ!!")           
+
+#8. Calculate the slope, x-intercept and y-intercept of y = 2x -2
+def findSlope(e):
+    p = e.replace("y=","").split("x")
+    s = float(p[0])    
+    # i = float(p[1])
+    return s
+
+def findIntercept(e):    
+    p = e.replace("y=","").split("x")
+    # s = float(p[0])    
+    i = float(p[1])
+    return i
+      
+e = "y=2x-2"
+
+slope=findSlope(e)
+print(f"Hệ số góc (slope) là: {slope}")
+
+xi = - findIntercept(e) / findSlope(e)
+print(f"X-intercept là: ({xi},0)")
+
+yi = findIntercept(e)
+print(f"Y-intercept là: (0,{yi})")
+
+#================================================================
+breakpoint()
+e = "y = 2x-2"
+p = e.replace("y = ", "").split("x")
+s = float(p[0])
+i = float(p[1])
+
+print(f"Hệ số góc (slope) là: {s}")
+yi = s * 0 + i
+print(f"Y-intercept là: {yi}")
+xi = -i / s
+print(f"X-intercept là: {xi}")
+
+#9. Slope is (m = y2-y1/x2-x1). Find the slope and Euclidean distance between point (2, 2) and point (6,10)
+
+
+#10. Compare the slopes in tasks 8 and 9.
+
+
+#11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0.
+
+
+#12. Find the length of 'python' and 'dragon' and make a falsy comparison statement.
+
+
+#13. Use and operator to check if 'on' is found in both 'python' and 'dragon'
+
+
+#14. I hope this course is not full of jargon. Use in operator to check if jargon is in the sentence.
+
+
+#15. There is no 'on' in both dragon and python
+
+
+#16. Find the length of the text python and convert the value to float and convert it to string
+
+
+#17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
+
+
+#18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
+
+
+#19. Check if type of '10' is equal to type of 10
+
+
+#20. Check if int('9.8') is equal to 10
+
+
+#21. Write a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
