@@ -1,8 +1,2 @@
-def checkEvenNumber(n):
-    if(n%2 == 0):
-        return(f"Đây là số chẵn")
-    return(f"Đây là số lẻ")
-while True: 
-    num=int(input("Nhập 1 số: "))
-    print(checkEvenNumber(num))     
-    break
+for i in range(1,6):
+    print(i, 1, i, i**2, i**3)

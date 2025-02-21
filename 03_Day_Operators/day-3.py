@@ -416,13 +416,39 @@ print(checkNumEqual(num))
 ''' Enter hours: 40
     Enter rate per hour: 28
     Your weekly earning is 1120'''
-
-
+def CalculatePay(h,rph):
+        p = h * rph
+        return p
+        
+while True:  
+    try:
+        h = int(input("Nhập giờ: "))
+        break
+    except ValueError as e:
+        print(f"Lỗi {e}")
+while True:  
+    try:
+        rph = int(input("Nhập lương mỗi giờ: "))
+        break
+    except ValueError as e:
+        print(f"Lỗi {e}")            
+print(f"Lương mỗi tuần của bạn là: {CalculatePay(h,rph)}$")
 
 #22. Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
 '''Enter number of years you have lived: 100
 You have lived for 3153600000 seconds.'''
-
+def CalculateTimeLive(y):
+        result = y * 3153600
+        return (f"Bạn đã sống được {result} giây rồi á!")
+        
+while True:  
+    try:
+        year = int(input("Nhập năm: "))
+        break
+    except ValueError as e:
+        print(f"Lỗi {e}")     
+             
+print(CalculateTimeLive(year))
 
 #23. Write a Python script that displays the following table
 ''' 1 1 1 1 1
@@ -430,3 +456,11 @@ You have lived for 3153600000 seconds.'''
     3 1 3 9 27
     4 1 4 16 64
     5 1 5 25 125 '''
+
+# for columnn in range(1,6):
+for i in range(1,6):
+    print(i, 1, i, i**2, i**3)
+        
+   
+    
+
