@@ -297,19 +297,60 @@ else:
     print("Hệ tọa độ của bài 8 bé hơn bài 9")
     
 #11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0.
+#import math
+import numpy as np
+def findY(x):
+    return x**2 + 6*x + 9
+    
+x_val = np.arange(-10,10,1)
+y_val = [findY(x) for x in x_val]
 
+roots = np.roots([1,6,9])
+print(f"Giá trị x: {x_val}")
+print(f"Giá trị y: {y_val}\n")
+print(roots)
+
+#================================================================
+import math
+def findY(x):
+    return math.pow(x, 2) + 6*x + 9  # Tính y = x^2 + 6x + 9
+x_val = range(-10,10,1)
+y_val = [findY(x) for x in x_val]
+findXmakeYbeZero = [x_val[i] for i in range(len(y_val)) if y_val[i] == 0]
+
+print(f"Giá trị x: {list(x_val)}")
+print(f"Giá trị y: {y_val}")
+print(f"Giá trị x làm y = 0 là: {findXmakeYbeZero}")
 
 #12. Find the length of 'python' and 'dragon' and make a falsy comparison statement.
-
+lp=len("python")
+dp=len("dragon")
+print(lp != dp)
 
 #13. Use and operator to check if 'on' is found in both 'python' and 'dragon'
-
+def FIND_ON():
+    # for findON in lp and dp:
+        if('on' in "python" and 'on' in "dragon"):
+            return True
+        return False
+print(FIND_ON())
 
 #14. I hope this course is not full of jargon. Use in operator to check if jargon is in the sentence.
-
+sentence = 'I hope this course is not full of jargon'
+def checkWord(sentence):
+    if('jargon' in sentence):
+        return True
+print(checkWord(sentence))    
 
 #15. There is no 'on' in both dragon and python
-
+str1, str2 = "python", "dragon"
+def deleteON(str1,str2):
+    delOn1 = str1.split("on")
+    d1 = delOn1[0]
+    delOn2 = str2.split("on")
+    d2 = delOn2[0]
+    return d1, d2
+print(deleteON(str1,str2))
 
 #16. Find the length of the text python and convert the value to float and convert it to string
 
