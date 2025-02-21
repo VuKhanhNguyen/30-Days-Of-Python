@@ -353,18 +353,80 @@ def deleteON(str1,str2):
 print(deleteON(str1,str2))
 
 #16. Find the length of the text python and convert the value to float and convert it to string
+def findLength(str):
+    stringg = len(str)
+    return stringg
 
+strr='python'
+result1 = findLength(strr)
+print(result1)
+result2 = str(result1)
+print(result2)
+print(type(result2))
 
 #17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-
+def checkEvenNumber(n):
+    if(n%2 == 0):
+        return(f"Đây là số chẵn")
+    return(f"Đây là số lẻ")
+while True: 
+    num=int(input("Nhập 1 số: "))
+    print(checkEvenNumber(num))     
+    break
 
 #18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
+import math
+def convertVal():
+    v=2.7
+    val = int(v)
+    return val
 
+def checkCalculate():
+    cal = math.floor(7/3)
+    # cal = 7//3
+    if(cal == convertVal()):
+        return True
+    return False
+print(checkCalculate())
 
 #19. Check if type of '10' is equal to type of 10
-
+n1=type('10')
+n2=type(10)
+def checkTypeEqual(n1,n2):
+    if(n1 == n2):
+        return (f"Bằng nhau")
+    return (f"Không bằng nhau")
+print(checkTypeEqual(n1,n2))
 
 #20. Check if int('9.8') is equal to 10
-
+num = int(float('9.8'))
+def checkNumEqual(n):
+    try:
+        if(n == 10):
+            return True
+        else:
+            return False
+    except ValueError as e:
+        print(f"Lỗi {e} rồi ní ơi!")
+    except Exception as e:
+        print(f"Lỗi {e} rồi ní ơi!") 
+print(checkNumEqual(num))
 
 #21. Write a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+''' Enter hours: 40
+    Enter rate per hour: 28
+    Your weekly earning is 1120'''
+
+
+
+#22. Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
+'''Enter number of years you have lived: 100
+You have lived for 3153600000 seconds.'''
+
+
+#23. Write a Python script that displays the following table
+''' 1 1 1 1 1
+    2 1 2 4 8
+    3 1 3 9 27
+    4 1 4 16 64
+    5 1 5 25 125 '''
