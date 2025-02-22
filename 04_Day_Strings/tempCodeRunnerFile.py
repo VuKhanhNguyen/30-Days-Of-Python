@@ -1,10 +1,8 @@
-strr = 'You cannot end a sentence with because because because is a conjunction'
-findString = strr.find('because') #23
-print(findString)
-
-findString2 = strr.rindex('because') #24
-print(findString2)
-
-sliceString = strr.split()
-sliceString2 = ' '.join([i for i in sliceString if i != 'because'])
-print(sliceString2)     
+36. Make the following using string formatting methods:
+    8 + 6 = 14
+    8 - 6 = 2
+    8 * 6 = 48
+    8 / 6 = 1.33
+    8 % 6 = 2
+    8 // 6 = 1
+    8 ** 6 = 262144
