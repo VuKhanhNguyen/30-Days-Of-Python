@@ -12,6 +12,10 @@
 #17. What character is at index 10 in "Coding For All" string.
 #19. Create an acronym or an abbreviation for the name 'Coding For All'.
 #20. Use index to determine the position of the first occurrence of C in Coding For All.
+#21. Use index to determine the position of the first occurrence of F in Coding For All.
+#28. Does 'Coding For All' start with a substring _Coding_?
+#29. Does 'Coding For All' end with a substring _coding_?
+
 
 company = 'Coding For All' #3
 print(company) #4
@@ -58,8 +62,7 @@ abbreCompany2 = ''.join([i[0] for i in company.split()]) #19
 print(abbreCompany2)
 
 
-company = 'Coding For All'
-   
+company = 'Coding For All' #20
 findCharCompany = company[0]
 findIndexCompany =  company.find(findCharCompany)
 print(f'Chữ {findCharCompany} ở vị trí thứ {findIndexCompany}')
@@ -67,3 +70,22 @@ print(f'Chữ {findCharCompany} ở vị trí thứ {findIndexCompany}')
 for index, char in enumerate(company):
     # findIndexCompany2 = company.find(char)
     print(f'Chữ {char} ở vị trí thứ {index}')
+    
+company = 'Coding For All'  #21
+for index, char in enumerate(company):
+    if 'F' in char:
+        print(f'Chữ {char} ở vị trí thứ {index}')
+
+company = 'Coding For All'  #21
+for index in range(len(company)):
+    if company[index] == 'F':
+        print(index)   
+        
+             
+ew = company.startswith('coding')       
+sw = company.startswith('Coding')
+if sw:
+    print(f'{sw}, ở đầu chuỗi')     
+if ew:
+  print(f'{ew}, ở đầu chuỗi')
+print("Có đéo đâu ní!")          

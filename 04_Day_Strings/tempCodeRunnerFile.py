@@ -1,9 +1,10 @@
-company = 'Coding For All'
-   
-findCharCompany = company[0]
-findIndexCompany =  company.find(findCharCompany)
-print(f'Chữ {findCharCompany} ở vị trí thứ {findIndexCompany}')
+strr = 'You cannot end a sentence with because because because is a conjunction'
+findString = strr.find('because') #23
+print(findString)
 
-for index, char in enumerate(company):
-    # findIndexCompany2 = company.find(char)
-    print(f'Chữ {char} ở vị trí thứ {index}')
+findString2 = strr.rindex('because') #24
+print(findString2)
+
+sliceString = strr.split()
+sliceString2 = ' '.join([i for i in sliceString if i != 'because'])
+print(sliceString2)     
