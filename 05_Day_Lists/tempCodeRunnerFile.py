@@ -1,4 +1,7 @@
+front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+back_end = ['Node','Express', 'MongoDB']
 
-it_companies = ['Amazon', 'Apple', 'Facebook', 'Google', 'IBM', 'IT', 'Microsoft', 'Oracle', 'TikTok']
-it_companies.remove('IT')
-print(it_companies)
+print(front_end + back_end)
+
+full_stack = front_end + back_end
+print(full_stack)

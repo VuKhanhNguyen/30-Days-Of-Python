@@ -80,5 +80,13 @@ print(it_companies)
 
 
 it_companies = ['Amazon', 'Apple', 'Facebook', 'Google', 'IBM', 'IT', 'Microsoft', 'Oracle', 'TikTok']
-it_companies.remove('IT') #25
+#del it_companies[0:3]
 print(it_companies)
+try:
+    del it_companies #25
+    print(it_companies)
+except Exception as e:
+    print(f'Lỗi {e}')
+except ValueError as e:
+    print(f'Lỗi {e}')        
+    
