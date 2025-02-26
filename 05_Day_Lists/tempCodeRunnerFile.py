@@ -1,7 +1,6 @@
-front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
-back_end = ['Node','Express', 'MongoDB']
-
-print(front_end + back_end)
-
-full_stack = front_end + back_end
-print(full_stack)
+countries_list = ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']
+first, second, third, *scandic_countries = countries_list
+print("First country:", first)
+print("Second country:", second)
+print("Third country:", third)
+print("Scandic countries:", scandic_countries)
