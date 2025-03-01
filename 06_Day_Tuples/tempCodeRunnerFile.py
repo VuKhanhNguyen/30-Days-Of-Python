@@ -1,4 +1,7 @@
-tpl = ('item1', 'item2', 'item3','item4')
-first_item = tpl[-4]
-second_item = tpl[-3]
-print(first_item)
+if i == 'Estonia':
+         print('Estonia is a nordic country')
+    elif i == 'Iceland':
+         print('Iceland is a nordic country')
+    else: 
+        print('Not a nordic country')
+    break
