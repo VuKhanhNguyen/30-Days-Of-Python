@@ -26,7 +26,7 @@ def is_empty(n):
         return False
 print(is_empty([]))
 
-#4.
+#4.Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
 def calculate_mean(lst):
     sum = 0
     if len(lst) == 0:
