@@ -1,4 +1,4 @@
-[
+countries_list =[
     {
         "name": "Afghanistan",
         "capital": "Kabul",
