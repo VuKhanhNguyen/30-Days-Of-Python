@@ -78,10 +78,74 @@ else:
     print('Đéo có file này đâu')
 
 
+#json to dictionary dùng loads()
+import json
+person_json = '''{
+    "name": "Asabeneh",
+    "country": "Finland",
+    "city": "Helsinki",
+    "skills": ["JavaScrip", "React", "Python"]
+}'''
+person_dct = json.loads(person_json)
+print(type(person_dct))
+print(person_dct)
+print(person_dct['name'])
 
+#dictionary to json dùng dumps()
+import json
+person = {
+    "name": "Asabeneh",
+    "country": "Finland",
+    "city": "Helsinki",
+    "skills": ["JavaScrip", "React", "Python"]
+}
+person_json = json.dumps(person, indent=4) #indent=4 là khoảng cách giữa các dòng, nếu không có thì sẽ không có khoảng cách giữa các dòng
+                                            # indent gồm 2,4,8                             
+print(type(person_json))
+print(person_json)
 
+#lưu json
+import json
 
+person = {
+    "name": "Asabeneh",
+    "country": "Finland",
+    "city": "Helsinki",
+    "skills": ["JavaScrip", "React", "Python"]
+}
 
+with open('K:/AllOfPython/pythonLearning/30daysofPython/30-Days-Of-Python_NVK/30-Days-Of-Python/files/json_example.json') as f:
+    json.dump(person, f, ensure_ascii=False, indent=4) #ensure_ascii=False là không chuyển đổi sang unicode, nếu không có thì sẽ chuyển đổi sang unicode
+    
+#csv
+import csv
+with open('K:/AllOfPython/pythonLearning/30daysofPython/30-Days-Of-Python_NVK/30-Days-Of-Python/files/csv_example.csv') as f:
+    csv_reader = csv.reader(f, delimiter=',') 
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            print(f'Column names are :{", ".join(row)}')
+            line_count += 1
+        else:
+            print(
+                f'\t{row[0]} is a teachers. He lives in {row[1]}, {row[2]}.')
+            line_count += 1
+    print(f'Number of lines:  {line_count}')
+
+#xlsx
+import openpyxl
+excel_book = openpyxl.load_workbook('K:/AllOfPython/pythonLearning/30daysofPython/30-Days-Of-Python_NVK/30-Days-Of-Python/files/excel_example.xlsx')
+print(len(excel_book.sheetnames))
+print(excel_book.sheetnames)
+
+#xml
+import xml.etree.ElementTree as ET
+tree = ET.parse('K:/AllOfPython/pythonLearning/30daysofPython/30-Days-Of-Python_NVK/30-Days-Of-Python/files/xml_example.xml')
+root = tree.getroot()
+print('Root tag:', root.tag)
+print('Attribute:', root.attrib)
+for child in root:
+    print('field: ', child.tag)
 
 
 
